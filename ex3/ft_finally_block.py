@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 
 def water_plants(plant_list: list[str] | tuple[str, ...]) -> None:
     print("Opening watering system")
