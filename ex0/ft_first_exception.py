@@ -32,7 +32,5 @@ def test_temperature_input() -> None:
 
     print("All tests completed - program didn't crash!")
 
-
-# Run the tests
 if __name__ == "__main__":
     test_temperature_input()
