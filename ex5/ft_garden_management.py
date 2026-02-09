@@ -20,10 +20,11 @@ class HealthError(GardenError):
 
 
 class GardenManager:
-    def __init__(self):
-        self.plants = {}
+    def __init__(self) -> None:
+        self.plants: dict[str, dict[str, int]] = {}
 
-    def add_plant(self, plant_name, water_level, sunlight_hours):
+    def add_plant(self, plant_name: str, water_level: int,
+                  sunlight_hours: int) -> str:
         if not plant_name:
             raise PlantError("Plant name cannot be empty!")
 
@@ -33,14 +34,14 @@ class GardenManager:
         }
         return f"Added {plant_name} successfully"
 
-    def water_plant(self, plant_name, amount):
+    def water_plant(self, plant_name: str, amount: int) -> str:
         if plant_name not in self.plants:
             raise WaterError(f"Plant '{plant_name}' not found!")
 
         self.plants[plant_name]["water_level"] += amount
         return f"Watering {plant_name} - success"
 
-    def check_health(self, plant_name):
+    def check_health(self, plant_name: str) -> str:
         if plant_name not in self.plants:
             raise HealthError(f"Plant '{plant_name}' not found!")
 
@@ -54,7 +55,7 @@ class GardenManager:
         return f"{plant_name}: healthy (water: {water}, sun: {sun})"
 
 
-def test_garden_management():
+def test_garden_management() -> None:
     print("=== Garden Management System ===")
     garden = GardenManager()
 

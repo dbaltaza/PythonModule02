@@ -1,5 +1,7 @@
+from __future__ import annotations
 
-def water_plants(plant_list):
+
+def water_plants(plant_list: list[str] | tuple[str, ...]) -> None:
     print("Opening watering system")
     try:
         for plant in plant_list:
@@ -12,7 +14,7 @@ def water_plants(plant_list):
         print("Closing watering system (cleanup)")
 
 
-def test_watering_system():
+def test_watering_system() -> None:
     print("=== Garden Watering System ===\n")
     print("Testing normal watering...")
     good_list = ("tomato", "lettuce", "carrots",)

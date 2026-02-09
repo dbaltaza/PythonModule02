@@ -1,5 +1,6 @@
 
-def check_plant_health(plant_name, water_level, sunlight_hours):
+def check_plant_health(plant_name: str, water_level: int,
+                       sunlight_hours: int) -> str:
     if not plant_name or not isinstance(plant_name, str):
         raise ValueError("Plant name cannot be empty!")
     if not 1 <= water_level <= 10:
@@ -16,7 +17,7 @@ def check_plant_health(plant_name, water_level, sunlight_hours):
     return f"Plant '{plant_name}' is healthy!"
 
 
-def test_plant_checks():
+def test_plant_checks() -> None:
     print("=== Garden Plant Health Checker ===\n")
 
     print("Testing good values...")
