@@ -8,13 +8,13 @@ def garden_operations() -> None:
 
     print("Testing ZeroDivisionError...")
     try:
-        result = 10 / 0
+        _ = 10 / 0
     except ZeroDivisionError as e:
         print(f"Caught ZeroDivisionError: {e}\n")
 
     print("Testing FileNotFoundError...")
     try:
-        with open("missing.txt", "r") as f:
+        with open("missing.txt", "r") as _:
             pass
     except FileNotFoundError as e:
         print(f"Caught FileNotFoundError: {e}\n")
@@ -36,8 +36,10 @@ def garden_operations() -> None:
 
     print("All error types tested successfully!")
 
+
 def test_error_types() -> None:
     garden_operations()
+
 
 if __name__ == "__main__":
     test_error_types()

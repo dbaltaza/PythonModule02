@@ -26,11 +26,14 @@ def test_temperature_input() -> None:
             elif "out of range" in str(e):
                 temp = int(value)
                 if temp > 40:
-                    print(f"Error: {temp}°C is too hot for plants (max 40°C)\n")
+                    msg = f"Error: {temp}°C is too hot for plants (max 40°C)"
+                    print(f"{msg}\n")
                 else:
-                    print(f"Error: {temp}°C is too cold for plants (min 0°C)\n")
+                    msg = f"Error: {temp}°C is too cold for plants (min 0°C)"
+                    print(f"{msg}\n")
 
     print("All tests completed - program didn't crash!")
+
 
 if __name__ == "__main__":
     test_temperature_input()
