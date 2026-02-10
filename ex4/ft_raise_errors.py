@@ -1,6 +1,17 @@
 
 def check_plant_health(plant_name: str, water_level: int,
                        sunlight_hours: int) -> str:
+    """Validate a plant's basic needs and raise clear errors.
+
+    In the smart garden, each plant must have:
+    - a non-empty name (string),
+    - a water level between 1 and 10,
+    - sunlight between 2 and 12 hours.
+
+    This function raises `ValueError` with a concise message when a
+    parameter is outside the allowed range. It returns a short success
+    string when everything looks healthy.
+    """
     if not plant_name or not isinstance(plant_name, str):
         raise ValueError("Plant name cannot be empty!")
     if not 1 <= water_level <= 10:
@@ -18,6 +29,12 @@ def check_plant_health(plant_name: str, water_level: int,
 
 
 def test_plant_checks() -> None:
+    """Run example checks to demonstrate raising and handling errors.
+
+    The routine mimics a small CLI that validates plant inputs and
+    prints either success messages or the error messages produced by
+    `check_plant_health`. It ensures the program never crashes.
+    """
     print("=== Garden Plant Health Checker ===\n")
 
     print("Testing good values...")

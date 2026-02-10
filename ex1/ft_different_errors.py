@@ -1,4 +1,10 @@
 def garden_operations() -> None:
+    """Demonstrate common garden-related errors and how to handle them.
+
+    This function performs several operations that might fail, such as
+    parsing data, calculating ratios, accessing records, or opening files,
+    trapping each specific error to keep the garden monitoring running.
+    """
     print("=== Garden Error Types Demo ===\n")
     print("Testing ValueError...")
     try:
@@ -38,6 +44,11 @@ def garden_operations() -> None:
 
 
 def test_error_types() -> None:
+    """Execute the garden operations demo.
+
+    Serves as the entry point for demonstrating error handling
+    capabilities in the garden management system.
+    """
     garden_operations()
 
 
