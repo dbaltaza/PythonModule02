@@ -14,11 +14,6 @@ class WaterError(GardenError):
 
 
 def ft_checker() -> None:
-    """Demonstrate the use of custom garden exceptions.
-
-    Shows how specific agricultural errors can be raised and caught
-    individually or as a group using the base GardenError class.
-    """
     print("=== Custom Garden Errors Demo ===\n")
     print("Testing PlantError...")
 

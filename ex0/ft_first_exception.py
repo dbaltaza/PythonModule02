@@ -1,10 +1,4 @@
 def check_temperature(temp_str: str) -> int:
-    """Check if the temperature string is valid and within safe limits.
-
-    In a smart garden, maintaining the right temperature is crucial.
-    This function validates the input string and ensures the temperature
-    is between 0°C and 40°C.
-    """
     try:
         temp = int(temp_str)
     except ValueError:
@@ -17,12 +11,6 @@ def check_temperature(temp_str: str) -> int:
 
 
 def test_temperature_input() -> None:
-    """Test the temperature checker with various inputs.
-
-    Simulates sensor readings to demonstrate how the system handles
-    valid data, malformed strings, and out-of-range values without
-    crashing.
-    """
     print("=== Garden Temperature Checker ===\n")
 
     test_values = ["25", "abc", "100", "-50"]
