@@ -78,8 +78,8 @@ def test_garden_management() -> None:
     print("\nWatering plants...")
     print("Opening watering system")
     try:
-        for plant in ["tomato", "lettuce"]:
-            print(f"Watering {plant} - success")
+        print(garden.water_plant("tomato", 2))
+        print(garden.water_plant("lettuce", 3))
     finally:
         print("Closing watering system (cleanup)")
 
