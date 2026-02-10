@@ -1,5 +1,11 @@
 
 def water_plants(plant_list: list[str] | tuple[str, ...]) -> None:
+    """Simulate the plant watering process with guaranteed cleanup.
+
+    Uses a finally block to ensure the watering system is always
+    closed, preventing water waste or system pressure issues even if
+    an invalid plant entry is encountered.
+    """
     print("Opening watering system")
     try:
         for plant in plant_list:
@@ -13,6 +19,11 @@ def water_plants(plant_list: list[str] | tuple[str, ...]) -> None:
 
 
 def test_watering_system() -> None:
+    """Run tests for the watering system's error handling.
+
+    Verifies that the system behaves correctly with valid plant lists
+    and ensures cleanup occurs when encountering a 'None' value.
+    """
     print("=== Garden Watering System ===\n")
     print("Testing normal watering...")
     good_list = ("tomato", "lettuce", "carrots",)

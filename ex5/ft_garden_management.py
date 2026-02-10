@@ -20,11 +20,22 @@ class HealthError(GardenError):
 
 
 class GardenManager:
+    """Manages a collection of plants and their environmental needs.
+
+    This class provides methods to add plants, record watering actions,
+    and perform health checks based on water levels and sunlight.
+    """
+
     def __init__(self) -> None:
+        """Initialize an empty garden database."""
         self.plants: dict[str, dict[str, int]] = {}
 
     def add_plant(self, plant_name: str, water_level: int,
                   sunlight_hours: int) -> str:
+        """Register a new plant in the garden management system.
+
+        Raises PlantError if the name is empty.
+        """
         if not plant_name:
             raise PlantError("Plant name cannot be empty!")
 
@@ -35,6 +46,10 @@ class GardenManager:
         return f"Added {plant_name} successfully"
 
     def water_plant(self, plant_name: str, amount: int) -> str:
+        """Increase the water level of a specific plant.
+
+        Raises WaterError if the plant is not found.
+        """
         if plant_name not in self.plants:
             raise WaterError(f"Plant '{plant_name}' not found!")
 
@@ -42,6 +57,11 @@ class GardenManager:
         return f"Watering {plant_name} - success"
 
     def check_health(self, plant_name: str) -> str:
+        """Assess the current health of a plant.
+
+        Raises HealthError if the plant is missing or if its water
+        level is outside acceptable limits.
+        """
         if plant_name not in self.plants:
             raise HealthError(f"Plant '{plant_name}' not found!")
 
@@ -56,6 +76,11 @@ class GardenManager:
 
 
 def test_garden_management() -> None:
+    """Run a full simulation of the garden management system.
+
+    Demonstrates adding plants, watering them, and performing health
+    checks while gracefully handling various custom garden errors.
+    """
     print("=== Garden Management System ===")
     garden = GardenManager()
 

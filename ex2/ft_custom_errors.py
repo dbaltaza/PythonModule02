@@ -1,16 +1,24 @@
 class GardenError(Exception):
+    """Base class for all exceptions related to the garden guardian."""
     pass
 
 
 class PlantError(GardenError):
+    """Exception raised for errors specific to plant health or status."""
     pass
 
 
 class WaterError(GardenError):
+    """Exception raised for errors in the irrigation or water supply."""
     pass
 
 
 def ft_checker() -> None:
+    """Demonstrate the use of custom garden exceptions.
+
+    Shows how specific agricultural errors can be raised and caught
+    individually or as a group using the base GardenError class.
+    """
     print("=== Custom Garden Errors Demo ===\n")
     print("Testing PlantError...")
 
