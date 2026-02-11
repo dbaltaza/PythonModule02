@@ -48,4 +48,4 @@ def test_plant_checks() -> None:
 
 
 if __name__ == "__main__":
-    test_plant_checks()
+    test_garden_manager()
