@@ -32,7 +32,7 @@ def test_plant_checks() -> None:
     except ValueError as e:
         print(f"Error: {e}\n")
 
-    print("Testing bad water value...")
+    print("Testing bad water level...")
     try:
         print(check_plant_health("tomato", 15, 12), "\n")
     except ValueError as e:
@@ -48,4 +48,4 @@ def test_plant_checks() -> None:
 
 
 if __name__ == "__main__":
-    test_garden_manager()
+    test_plant_checks()

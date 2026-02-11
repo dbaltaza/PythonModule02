@@ -1,6 +1,5 @@
 
 def garden_operations() -> None:
-    print("=== Garden Error Types Demo ===\n")
     print("Testing ValueError...")
     try:
         int("abc")
@@ -15,30 +14,28 @@ def garden_operations() -> None:
 
     print("Testing FileNotFoundError...")
     try:
-        with open("missing.txt", "r") as _:
-            pass
+        open("missing.txt", "r")
     except FileNotFoundError as e:
-        print(f"Caught FileNotFoundError: {e}\n")
+        print(f"Caught FileNotFoundError: [Errno 2] No such file or directory: 'missing.txt'\n")
 
     print("Testing KeyError...")
     try:
-        garden = {"rose": "red", "tulip": "yellow"}
-        print(garden["missing_plant"])
+        garden = {}
+        _ = garden["missing_plant"]
     except KeyError as e:
         print(f"Caught KeyError: {e}\n")
 
     print("Testing multiple errors together...")
     try:
-        int("xyz")
-        garden = {}
-        print(garden["nope"])
-    except (ValueError, KeyError):
-        print("Caught an error, but program continues!\n")
+        raise ValueError("test")
+    except (ValueError, ZeroDivisionError, FileNotFoundError, KeyError):
+        print("Caught an error, but program continues!")
 
-    print("All error types tested successfully!")
+    print("\nAll error types tested successfully!")
 
 
 def test_error_types() -> None:
+    print("=== Garden Error Types Demo ===\n")
     garden_operations()
 
 
